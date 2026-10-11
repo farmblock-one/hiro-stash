@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hiro Stash</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>📚 Hiro Stash</h1>
+  <input id="search" type="search" placeholder="Tìm ý tưởng, nguồn, chủ đề…">
+  <button id="btn-review" class="ghost">🎲 Ôn nhanh</button>
+  <button id="btn-add">+ Thêm ý tưởng</button>
+</header>
+<div class="layout">
+  <aside>
+    <h2>Chủ đề</h2>
+    <ul id="topics"></ul>
+    <div class="side-actions">
+      <button id="btn-export" class="ghost">Xuất JSON</button>
+      <button id="btn-import" class="ghost">Nhập JSON</button>
+      <input id="file" type="file" accept="application/json" hidden>
+    </div>
+  </aside>
+  <main>
+    <div id="stats"></div>
+    <div id="cards"></div>
+  </main>
+</div>
+
+<dialog id="dlg">
+  <form method="dialog" id="form">
+    <h3 id="dlg-title">Ý tưởng mới</h3>
+    <label>Ý tưởng (ngắn gọn)
+      <textarea id="f-text" rows="4" required maxlength="600"></textarea>
+    </label>
+    <label>Chủ đề (cách nhau bằng dấu phẩy)
+      <input id="f-topics" placeholder="năng suất, tâm lý" list="topic-list">
+      <datalist id="topic-list"></datalist>
+    </label>
+    <label>Nguồn (tên sách/bài/link)
+      <input id="f-source" placeholder="Atomic Habits – James Clear">
+    </label>
+    <menu>
+      <button type="button" id="f-cancel" class="ghost">Hủy</button>
+      <button type="submit">Lưu</button>
+    </menu>
+  </form>
+</dialog>
+
+<dialog id="review">
+  <div id="review-card"></div>
+  <menu>
+    <button id="r-close" class="ghost">Đóng</button>
+    <button id="r-next">Ý tưởng khác →</button>
+  </menu>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>
